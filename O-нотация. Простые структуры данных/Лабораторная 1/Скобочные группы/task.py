@@ -5,11 +5,17 @@ def check_brackets(brackets_row: str) -> bool:
     :param brackets_row: Входная строка для проверки
     :return: True, если последовательность корректна, False в противном случае
     """
-    while "()" in brackets_row:
-        brackets_row = brackets_row.replace("()", "")
-    return brackets_row == ""
+    c = 0
+    for i in brackets_row:
+        if i == '(':
+            c += 1
+        elif i == ')':
+            c -= 1
+        if c == -1:
+            return False
+    return c == 0
 
-    ...  #  реализовать проверку скобочной группы
+    ...  # реализовать проверку скобочной группы
 
 
 if __name__ == '__main__':
