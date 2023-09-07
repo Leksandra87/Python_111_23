@@ -5,4 +5,12 @@ def factorial_iterative(n: int) -> int:
     :param n: Число, факториал которого нужно найти
     :return: n! - факториал числа n
     """
-    ...  # TODO реализовать итеративный алгоритм нахождения факториала
+    if n < 0:
+        raise ValueError
+    num = 1
+    for i in range(1, n + 1):
+        num *= i
+    return num
+
+
+      #  реализовать итеративный алгоритм нахождения факториала
