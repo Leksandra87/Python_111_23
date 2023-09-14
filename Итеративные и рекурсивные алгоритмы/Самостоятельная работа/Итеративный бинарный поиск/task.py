@@ -15,6 +15,7 @@ def binary_search(value: int, seq: Sequence) -> int:
         raise TypeError
     if not seq:
         raise ValueError
+
     if seq[0] != value:
         l_ind = 0
     else:

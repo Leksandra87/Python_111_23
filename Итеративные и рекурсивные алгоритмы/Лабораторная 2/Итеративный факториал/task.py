@@ -7,6 +7,8 @@ def factorial_iterative(n: int) -> int:
     """
     if n < 0:
         raise ValueError
+    if n == 0:
+        return 1
     num = 1
     for i in range(1, n + 1):
         num *= i
