@@ -10,7 +10,18 @@ def rocket_coasts(table: List[List[int]]) -> List[List[int]]:
     :param table: Таблица размером N*M, где в каждой клетке дана стоимость перемещения в неё
     :return: Таблицу стоимостей перемещения по клеткам
     """
-    ...  # TODO рассчитать таблицу стоимостей перемещений
+    table = table.copy()
+    n = len(table)  # количество строк
+    m = len(table[0])  # количество столбцов
+    for row in range(n - 1):  # заполненее первого столбца
+        table[row + 1][0] += table[row][0]
+    for col in range(m - 1):  # заполняем первую строку
+        table[0][col + 1] += table[0][col]
+    for i in range(1, n):
+        for j in range(1, m):
+            table[i][j] += min(table[i - 1][j], table[i][j - 1])
+    return table
+    ...  # рассчитать таблицу стоимостей перемещений
 
 
 if __name__ == '__main__':
