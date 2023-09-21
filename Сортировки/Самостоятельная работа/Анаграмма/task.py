@@ -1,2 +1,3 @@
 def is_anagram(s: str, t: str) -> bool:
+    return sorted(list(s)) == sorted(list(t))
     ...
