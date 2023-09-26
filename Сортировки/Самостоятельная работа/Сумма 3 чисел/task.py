@@ -2,11 +2,30 @@ from typing import List
 
 
 def three_sum(nums: List[int]) -> List[List[int]]:
+    nums = sorted(nums.copy())
     res = []
-    for i in range(len(nums)):
-        one = nums[i]
-        for two in nums[i + 1:]:
-            three = 0 - one - two
-            if three in nums[]
+    for i in range(len(nums) - 2):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        l, r = i + 1, len(nums) - 1
+        while l < r:
+            total = nums[i] + nums[l] + nums[r]
+            if total == 0:
+                res.append([nums[i], nums[l], nums[r]])
+                while l < r and nums[l] == nums[l + 1]:
+                    l += 1
+                while l < r and nums[r] == nums[r - 1]:
+                    r -= 1
+                l += 1
+                r -= 1
+            elif total < 0:
+                l += 1
+            else:
+                r -= 1
+    return res
 
     ...
+
+
+if __name__ == '__main__':
+    print(three_sum([-1, 0, 1, 2, -1, -4]))

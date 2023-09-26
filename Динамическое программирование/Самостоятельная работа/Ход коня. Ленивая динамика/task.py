@@ -9,7 +9,15 @@ def calculate_paths(shape: Tuple[int, int]) -> int:
     :param shape: размер доски в виде кортежа
     :return: количество путей согласно заданным условиям
     """
-    ... # TODO реализуйте подсчет ходов коня
+    n, m = shape
+    if n < 3 and m < 3:
+        return 0
+
+    return 1 + ...
+
+
+
+    ...  # реализуйте подсчет ходов коня
 
 
 if __name__ == '__main__':

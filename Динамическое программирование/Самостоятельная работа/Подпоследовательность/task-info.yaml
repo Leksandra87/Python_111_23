@@ -3,7 +3,7 @@ files:
 - name: task.py
   visible: true
   placeholders:
-  - offset: 48
+  - offset: 270
     length: 3
     placeholder_text: '...'
     initial_state:
@@ -11,7 +11,7 @@ files:
       offset: 48
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: |-
       i, j = 0, 0
           while i < len(s) and j < len(t):
@@ -45,5 +45,8 @@ files:
 - name: tests/__init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sat, 23 Sep 2023 20:38:33 UTC"
 record: -1
