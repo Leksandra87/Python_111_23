@@ -2,6 +2,7 @@ from typing import Hashable, List
 from collections import deque
 
 import networkx as nx
+import matplotlib.pyplot as pl
 
 
 def bfs(g: nx.Graph, start_node: Hashable) -> List[Hashable]:
@@ -14,8 +15,42 @@ def bfs(g: nx.Graph, start_node: Hashable) -> List[Hashable]:
     :param start_node: Стартовый узел, откуда нужно начать обход
     :return: Список узлов в порядке посещения.
     """
-    ...  # TODO реализовать обход в ширину
+    path = []
+    visited = {node: False for node in g.nodes}
+    d = []
+
+    d.append(start_node)
+    visited[start_node] = True
+    while d:
+        current_node = d.pop(0)
+        path.append(current_node)
+        for neighbour in g[current_node]:
+            if not visited[neighbour]:
+                d.append(neighbour)
+                visited[neighbour] = True
+    return path
+    ...  # реализовать обход в ширину
 
 
 if __name__ == '__main__':
-    # TODO записать граф с помощью модуля networkx и прверить обход в ширину
+    g = nx.Graph()
+    g.add_nodes_from('ABCDEFGHIJK')
+    g.add_edges_from([
+        ('A', 'B'),
+        ('A', 'F'),
+        ('B', 'G'),
+        ('F', 'G'),
+        ('G', 'C'),
+        ('G', 'H'),
+        ('G', 'I'),
+        ('C', 'H'),
+        ('I', 'H'),
+        ('H', 'D'),
+        ('H', 'E'),
+        ('H', 'J'),
+        ('E', 'D')
+    ])
+    nx.draw(g, with_labels=True)
+    pl.show()
+    print(bfs(g, 'A'))
+    #  записать граф с помощью модуля networkx и прверить обход в ширину

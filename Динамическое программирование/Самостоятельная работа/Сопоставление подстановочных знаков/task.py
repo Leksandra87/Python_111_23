@@ -2,6 +2,8 @@ def is_match(s: str, p: str) -> bool:
     if p == '*':
         return True
     n = len(s)
+    if len(s) != len(p) and "*" not in p:
+        return False
     for i in range(n):
         if s[i] != p[i] and p[i] != '?':
             if p[i] != '*':
