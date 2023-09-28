@@ -45,9 +45,9 @@ if __name__ == '__main__':
         ('G', 'I'),
         ('C', 'H'),
         ('I', 'H'),
-        ('H', 'D'),
-        ('H', 'E'),
         ('H', 'J'),
+        ('H', 'E'),
+        ('H', 'D'),
         ('E', 'D')
     ])
     nx.draw(g, with_labels=True)
