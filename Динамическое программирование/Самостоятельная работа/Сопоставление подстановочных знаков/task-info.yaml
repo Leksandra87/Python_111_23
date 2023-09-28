@@ -3,7 +3,7 @@ files:
 - name: task.py
   visible: true
   placeholders:
-  - offset: 42
+  - offset: 439
     length: 3
     placeholder_text: '...'
     initial_state:
@@ -11,7 +11,7 @@ files:
       offset: 42
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Failed
     encrypted_possible_answer: |-
       m, n = len(s), len(p)
           dp = [[False] * (n + 1) for _ in range(m + 1)]
@@ -52,5 +52,8 @@ files:
 - name: tests/__init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: Error
+  time: "Thu, 28 Sep 2023 12:12:35 UTC"
 record: -1
